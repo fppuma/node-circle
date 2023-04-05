@@ -11,8 +11,9 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
-
-app.get('/', users.get)
+//set axios to users handler
+const usersHandler = users({axios})
+app.get('/', usersHandler.get)
 
 app.post('/', async (req, res) => {
   const {body} = req
