@@ -21,3 +21,13 @@ node index.js
 - Check the URL
 http://localhost:3000/
 
+
+## Get, Post, Put and Delete with Axios and Body Parser
+In order to send a request in json format
+
+```bash
+npm install body-parser
+```
+
+See example in https://www.npmjs.com/package/body-parser
+
