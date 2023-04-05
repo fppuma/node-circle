@@ -1,6 +1,7 @@
 const express = require('express')
 const axios = require('axios')
 const bodyParser = require('body-parser')
+const { users } = require('./endpoints')
 const app = express()
 const port = 3000
 
@@ -11,10 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 
-app.get('/', async (req, res) => {
-  const {data} = await axios.get('https://jsonplaceholder.typicode.com/users')
-  res.status(200).send(data)
-})
+app.get('/', users.get)
 
 app.post('/', async (req, res) => {
   const {body} = req
